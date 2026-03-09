@@ -433,7 +433,8 @@ This checklist provides such a guide for assessing compliance with STAMPED princ
 
 No single tool addresses all the dimensions of scientific rigor described above, though many tools contribute to one or several properties simultaneously.
 For example, container technologies such as Docker or Singularity serve Portability by providing OS-level isolation from explicit environment specifications, enable Ephemerality by disposing per-execution environments, and facilitate Distributability by producing frozen, shareable artifacts.
-Similarly, version control systems such as \texttt{Git} underpin both Tracking (content-addressed identification and change history) and Self-containment (gathering all components under a single root), while extensions such as \texttt{git-annex}, \texttt{DataLad}, \texttt{DVC}, and \texttt{Git LFS} further extend these properties to large binary data.
+Similarly, version control systems such as \texttt{Git} underpin both Tracking (content-addressed identification and change history) and Self-containment (gathering all components under a single root).
+As always, self-containing all data might be undesired or prohibitive due to size or other concerns. Extensions such as \texttt{git-annex}, \texttt{DataLad}, \texttt{DVC}, and \texttt{Git LFS} strike the balance between the two properties by tracking metadata regarding data obtainability instead, e.g., from which URLs on remote servers act as a source, and providing actionable interfaces to obtain the data when necessary.
 
 This overlap is not incidental — it reflects the interdependence of the STAMPED properties themselves.
 Achieving Ephemerality, for instance, inherently exercises Portability and Actionability: a disposable environment must be reconstituted from explicit specifications, and its setup must be automated end-to-end.
